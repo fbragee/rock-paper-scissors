@@ -14,6 +14,7 @@ function getComputerChoice() {
 let computerScore = 0;
 let playerScore = 0;
 
+// DOM Text selector
 const playerScoreText = document.querySelector('.playerScore');
 const computerScoreText = document.querySelector('.computerScore');
 const currentWinnerText = document.querySelector('.currentWinner');
@@ -62,19 +63,20 @@ function playRound(player, computer) {
 		}
 		return playerScore, computerScore;
 	}
-	if (playerScore === 5) {
-		finalWinnerText.innerText = 'You won!!!';
-		playerScore = 0;
-		computerScore = 0;
-	} else if (computerScore === 5) {
-		finalWinnerText.innerText = 'The computer wins...';
-		playerScore = 0;
-		computerScore = 0;
-	} else {
-		finalWinnerText.innerText = "It's a tie!";
-		playerScore = 0;
-		computerScore = 0;
-	}
+}
+
+if (playerScore === 5) {
+	finalWinnerText.innerText = 'You won!!!';
+	playerScore = 0;
+	computerScore = 0;
+} else if (computerScore === 5) {
+	finalWinnerText.innerText = 'The computer wins...';
+	playerScore = 0;
+	computerScore = 0;
+} else if (computerScore === playerScore && computerScore > 0) {
+	finalWinnerText.innerText = "It's a tie!";
+	playerScore = 0;
+	computerScore = 0;
 }
 
 // Button selectors
